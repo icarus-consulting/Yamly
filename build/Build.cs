@@ -5,6 +5,7 @@ using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.OpenCover;
+using Nuke.Common.Utilities.Collections;
 using System;
 using System.Runtime.InteropServices;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
@@ -24,6 +25,8 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
 
+    AbsolutePath SourceDirectory => RootDirectory / "src";
+    AbsolutePath TestsDirectory => RootDirectory / "tests";
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
 
     private string NuGetFeed => "https://api.nuget.org/v3/index.json";
@@ -32,12 +35,15 @@ class Build : NukeBuild
     private Version Version;
 
     Target Clean => _ => _
-        .Before(Restore)
         .Executes(() =>
         {
+            SourceDirectory.GlobDirectories("**/bin", "**/obj").DeleteDirectories();
+            TestsDirectory.GlobDirectories("**/bin", "**/obj").DeleteDirectories();
+            ArtifactsDirectory.CreateOrCleanDirectory();
         });
 
     Target Restore => _ => _
+        .DependsOn(Clean)
         .Executes(() =>
         {
             DotNetRestore(s => s
