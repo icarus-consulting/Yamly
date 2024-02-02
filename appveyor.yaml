@@ -4,12 +4,11 @@
 version: "{build}"
 image:
   - Visual Studio 2022
-  - Ubuntu
 configuration: Release
 environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
-  NUGET_TOKEN:
-    secure: 
+  APPVEYOR_TOKEN:
+    secure: wVt1RgJAnhNTyIjtK9yFkQbEEM+fBk1TLUzo0j3pe2U=
 # Do not build feature branch with open Pull Requests
 # skip_branch_with_pr: true
 build_script:
