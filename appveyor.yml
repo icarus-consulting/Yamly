@@ -6,13 +6,12 @@ image: Visual Studio 2022
 configuration: Release
 environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
-  APPVEYOR_TOKEN:
-    secure: wVt1RgJAnhNTyIjtK9yFkQbEEM+fBk1TLUzo0j3pe2U=
+  NUGET_TOKEN:
+    secure: FoQhDlKTkU0aOyihXYrwcw1zE17VwtRnlY0rSof1M6ht093o0E8iRtVwg1+a6AfP
 # Do not build feature branch with open Pull Requests
 # skip_branch_with_pr: true
-# Automatically register private account and/or project AppVeyor NuGet feeds.
-nuget:
-  account_feed: true
+install:
+- cmd: nuget sources Remove -Name "Icarus Packages" -Source https://ci.appveyor.com/nuget/icarus
 build_script:
   - sh: nuget sources Add -Name "MyNuget" -Source https://api.nuget.org/v3/index.json
   - sh: chmod +x build.sh
