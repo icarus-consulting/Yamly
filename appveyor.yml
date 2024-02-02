@@ -11,7 +11,7 @@ environment:
 # Do not build feature branch with open Pull Requests
 # skip_branch_with_pr: true
 install:
-- cmd: nuget sources Remove -Name "Icarus Packages" -Source https://ci.appveyor.com/nuget/icarus
+- cmd: nuget sources Remove -Source https://ci.appveyor.com/nuget/icarus
 build_script:
   - sh: nuget sources Add -Name "MyNuget" -Source https://api.nuget.org/v3/index.json
   - sh: chmod +x build.sh
