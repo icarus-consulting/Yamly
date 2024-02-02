@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yamly", "src\Yamly\Yamly.csproj", "{AAC27A0C-D52D-4AEE-A63C-89A3BA0FA2C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Yamly", "test\Test.Yamly\Test.Yamly.csproj", "{B8D7AC0D-014E-4E78-9057-08D08057214B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{B19FA30B-F800-491C-846D-BF654F8D1A3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B19FA30B-F800-491C-846D-BF654F8D1A3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B19FA30B-F800-491C-846D-BF654F8D1A3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC27A0C-D52D-4AEE-A63C-89A3BA0FA2C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC27A0C-D52D-4AEE-A63C-89A3BA0FA2C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC27A0C-D52D-4AEE-A63C-89A3BA0FA2C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC27A0C-D52D-4AEE-A63C-89A3BA0FA2C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8D7AC0D-014E-4E78-9057-08D08057214B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8D7AC0D-014E-4E78-9057-08D08057214B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8D7AC0D-014E-4E78-9057-08D08057214B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8D7AC0D-014E-4E78-9057-08D08057214B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {337C793D-8AF5-4E39-ADC7-ABB6D3D6E161}
+	EndGlobalSection
+EndGlobal

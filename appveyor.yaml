@@ -1,0 +1,20 @@
+#------------------------------------------------------------#
+#     CI Build Configuration for master branch pre-release   #
+#------------------------------------------------------------#
+version: "{build}"
+image:
+  - Visual Studio 2022
+  - Ubuntu
+configuration: Release
+environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
+  NUGET_TOKEN:
+    secure: 
+# Do not build feature branch with open Pull Requests
+# skip_branch_with_pr: true
+build_script:
+  - sh: nuget sources Add -Name "MyNuget" -Source https://api.nuget.org/v3/index.json
+  - sh: chmod +x build.sh
+  - sh: ./build.sh
+  - ps: (& cmd /c); [console]::OutputEncoding = New-Object System.Text.UTF8Encoding; & .\build.ps1
+test: off 

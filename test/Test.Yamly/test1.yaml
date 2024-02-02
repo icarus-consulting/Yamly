@@ -1,0 +1,16 @@
+root:
+  object:
+    name: test
+    type: text
+    value: hello
+  objectlist:
+    - name: test1
+      type: text
+      value: hello
+    - name: test2
+      type: number
+      value: 2
+  list:
+    - test1
+    - test2
+    - test3
