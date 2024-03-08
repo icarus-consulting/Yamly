@@ -2,8 +2,6 @@
   <PropertyGroup>
     <PackageId>gstocco.YamlDotNet.YamlPath</PackageId>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/gfs/YamlPathForYamlDotNet</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/gfs/YamlPathForYamlDotNet</RepositoryUrl>
     <Description>Adds a Query extension method to YamlNode objects to perform YamlPath queries.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>Copyright (c) Gabe Stocco</Copyright>
@@ -15,12 +13,8 @@
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-
+  
   <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\YamlDotNet\YamlDotNet.csproj" />
+    <ProjectReference Include="..\YamlDotNet\YamlDotNet.csproj" PrivateAssets="All"/>
   </ItemGroup>
 </Project>
