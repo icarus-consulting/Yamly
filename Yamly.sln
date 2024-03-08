@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "gfs.YamlDotNet.YamlPath", "src\gfs.YamlDotNet.YamlPath\gfs.YamlDotNet.YamlPath.csproj", "{A125A0BD-965C-4583-82FE-6E4CA0180EE5}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YamlDotNet", "src\YamlDotNet\YamlDotNet.csproj", "{6358884A-0DD1-4285-BE4D-2A7B2E09631F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{A125A0BD-965C-4583-82FE-6E4CA0180EE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A125A0BD-965C-4583-82FE-6E4CA0180EE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A125A0BD-965C-4583-82FE-6E4CA0180EE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6358884A-0DD1-4285-BE4D-2A7B2E09631F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6358884A-0DD1-4285-BE4D-2A7B2E09631F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6358884A-0DD1-4285-BE4D-2A7B2E09631F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6358884A-0DD1-4285-BE4D-2A7B2E09631F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
