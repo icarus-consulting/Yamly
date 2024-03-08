@@ -10,8 +10,6 @@ environment:
     secure: FoQhDlKTkU0aOyihXYrwcw1zE17VwtRnlY0rSof1M6ht093o0E8iRtVwg1+a6AfP
 # Do not build feature branch with open Pull Requests
 # skip_branch_with_pr: true
-install:
-- cmd: nuget sources Remove -Name AppveyorAccountFeed -Source https://ci.appveyor.com/nuget/icarus
 build_script:
   - ps: (& cmd /c); [console]::OutputEncoding = New-Object System.Text.UTF8Encoding; & .\build.ps1
 test: off 
