@@ -2,14 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="gstocco.YamlDotNet.YamlPath" Version="1.0.21" />
     <PackageReference Include="Yaapii.Atoms" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\gfs.YamlDotNet.YamlPath\gfs.YamlDotNet.YamlPath.csproj" />
   </ItemGroup>
 
 </Project>
