@@ -9,6 +9,7 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\sgKey.snk</AssemblyOriginatorKeyFile>
+    <UseProjectReferences>False</UseProjectReferences>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Nullable" Version="1.3.1" PrivateAssets="all" />
@@ -28,7 +29,7 @@
     </Compile>
   </ItemGroup>
   <Choose>
-    <When Condition="'$(Configuration)'=='Release'">
+    <When Condition="'$(UseProjectReferences)'=='True'">
       <ItemGroup>
         <ProjectReference Include="..\..\..\Yaapii.Atoms\src\Yaapii.Atoms\Yaapii.Atoms.csproj" />
       </ItemGroup>
