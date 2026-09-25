@@ -29,9 +29,6 @@ class Build : NukeBuild
     AbsolutePath TestsDirectory => RootDirectory / "tests";
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
 
-    private string NuGetFeed => "https://api.nuget.org/v3/index.json";
-    private string NUGET_TOKEN = Environment.GetEnvironmentVariable("NUGET_TOKEN");
-
     private Version Version;
 
     Target Clean => _ => _
@@ -91,41 +88,9 @@ class Build : NukeBuild
                 .SetConfiguration(Configuration)
             );
         });
-    Target Pack => _ => _
-        .DependsOn(Test)
-        .DependsOn(VersionFromTag)
-        .Executes(() =>
-        {
-            DotNetPack(s => s
-                .SetProject(Solution.GetProject("Yamly"))
-                .SetConfiguration(Configuration)
-                .SetNoBuild(true)
-                .SetVersion(Version.ToString())
-                .EnableIncludeSymbols()
-                .SetOutputDirectory(ArtifactsDirectory)
-                .SetSymbolPackageFormat(DotNetSymbolPackageFormat.snupkg)
-            );
-        });
-
-    Target PushPackage => _ => _
-        .OnlyWhenDynamic(() => IsServerBuild && AppVeyor.Instance.RepositoryTag && RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        .DependsOn(Pack)
-        .Executes(() =>
-        {
-            DotNetNuGetPush(s => s
-                .SetSource(NuGetFeed)
-                .SetApiKey(NUGET_TOKEN)
-                .CombineWith(ArtifactsDirectory.GlobFiles("*.nupkg", "*.snupkg"), (_, v) => _
-                    .SetTargetPath(v)
-                ),
-                degreeOfParallelism: 2,
-                completeOnFailure: false
-            );
-        });
 
     Target FullBuild => _ => _
         .DependsOn(Test)
-        .DependsOn(PushPackage)
         .Executes(() =>
         {
 
